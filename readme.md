@@ -2,6 +2,8 @@
 
   Mailbox for testing sent mail in your node apps.
 
+  [![Build Status](https://secure.travis-ci.org/RGBboy/test-mailbox.png)](http://travis-ci.org/RGBboy/test-mailbox)
+
 ## Installation
 
     $ npm install test-mailbox
