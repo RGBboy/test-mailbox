@@ -1,0 +1,23 @@
+{
+  "name": "test-mailbox",
+  "version": "0.0.1",
+  "description": "Mailbox for testing sent mail in your node apps.",
+  "keywords": ["email", "test", "smtp"],
+  "author": "RGBboy <me@rgbboy.com>",
+  "main": "index",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "simplesmtp": "0.1.x",
+    "mailparser": "0.2.x"
+  },
+  "devDependencies": {
+    "mocha": "1.4.x",
+    "should": "1.1.x",
+    "nodemailer": "0.3.x"
+  }
+}
