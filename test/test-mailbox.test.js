@@ -13,8 +13,8 @@ describe('Test Mailbox', function () {
       userAddress = 'TestUser@localhost',
       port = 8465, // test port for secure SMTP
       auth = {
-        user: 'TestApplication',
-        pass: 'TestApplication'
+        user: 'Test',
+        pass: 'Test'
       };
 
   before(function (done) {
@@ -47,7 +47,6 @@ describe('Test Mailbox', function () {
 
       it('should only accept emails addressed to options.address', function (done) {
         mailbox.once('newMail', function (mail) {
-          // this should only be executed once
           mail.should.exist;
           done();
         })
