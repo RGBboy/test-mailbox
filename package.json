@@ -12,7 +12,7 @@
     "test": "make test"
   },
   "dependencies": {
-    "simplesmtp": "0.1.x",
+    "simplesmtp": "git://github.com/andris9/simplesmtp.git#1948361ebfdbd635e343e643916b897397d43c05",
     "mailparser": "0.2.x"
   },
   "devDependencies": {
