@@ -4,6 +4,10 @@
   "description": "Mailbox for testing sent mail in your node apps.",
   "keywords": ["email", "test", "smtp"],
   "author": "RGBboy <me@rgbboy.com>",
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/RGBboy/test-mailbox"
+  },
   "main": "index",
   "engines": {
     "node": ">= 0.8.0"
