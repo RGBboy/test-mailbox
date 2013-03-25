@@ -1,6 +1,6 @@
 {
   "name": "test-mailbox",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Mailbox for testing sent mail in your node apps.",
   "keywords": ["email", "test", "smtp"],
   "author": "RGBboy <me@rgbboy.com>",
@@ -16,12 +16,12 @@
     "test": "make test"
   },
   "dependencies": {
-    "simplesmtp": "git://github.com/andris9/simplesmtp.git#1948361ebfdbd635e343e643916b897397d43c05",
-    "mailparser": "0.2.x"
+    "simplesmtp": "0.x.x",
+    "mailparser": "0.x.x"
   },
   "devDependencies": {
-    "mocha": "1.4.x",
-    "should": "1.1.x",
-    "nodemailer": "0.3.x"
+    "mocha": "1.x.x",
+    "should": "1.x.x",
+    "nodemailer": "0.x.x"
   }
 }
