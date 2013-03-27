@@ -11,6 +11,7 @@ describe('Test Mailbox', function () {
   var mailbox,
       sender,
       userAddress = 'TestUser@localhost',
+      userAddress2 = 'TestUser2@localhost',
       port = 8465, // test port for secure SMTP
       auth = {
         user: 'Test',
@@ -45,16 +46,58 @@ describe('Test Mailbox', function () {
 
     describe('.address', function () {
 
-      it('should only accept emails addressed to options.address', function (done) {
-        mailbox.once('newMail', function (mail) {
-          mail.should.exist;
-          done();
-        })
-        sender.send('NotTestUser@localhost', function(err, res) {
-          err.should.exist;
-          sender.send(userAddress, function (err, res) {
-            should.not.exist(err);
-            res.should.exist;
+      describe('when String', function () {
+
+        it('should only accept emails addressed to options.address', function (done) {
+          mailbox.once('newMail', function (mail) {
+            mail.should.exist;
+            done();
+          })
+          sender.send('NotTestUser@localhost', function(err, res) {
+            err.should.exist;
+            sender.send(userAddress, function (err, res) {
+              should.not.exist(err);
+              res.should.exist;
+            });
+          });
+
+        });
+
+      });
+
+      describe('when Array', function () {
+
+        beforeEach(function (done) {
+          mailbox.close(function (err) {
+            if (err) {
+              return done(err);
+            };
+            mailbox = new TestMailbox({
+              address: [userAddress, userAddress2],
+              auth: auth
+            });
+            mailbox.listen(port, done);
+          });
+        });
+
+        it('should only accept emails addressed to options.address', function (done) {
+          mailbox.once('newMail', function (mail) {
+            mail.should.exist;
+            mailbox.once('newMail', function (mail) {
+              mail.should.exist;
+              done();
+            });
+            sender.send(userAddress2, function (err, res) {
+              should.not.exist(err);
+              res.should.exist;
+            });
+          });
+          sender.send('NotTestUser@localhost', function(err, res) {
+            err.should.exist;
+            sender.send(userAddress, function (err, res) {
+              should.not.exist(err);
+              res.should.exist;
+            });
           });
         });
 
