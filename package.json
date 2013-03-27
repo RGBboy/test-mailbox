@@ -1,6 +1,6 @@
 {
   "name": "test-mailbox",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Mailbox for testing sent mail in your node apps.",
   "keywords": ["email", "test", "smtp"],
   "author": "RGBboy <me@rgbboy.com>",
