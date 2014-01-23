@@ -21,7 +21,7 @@ var mailbox = new TestMailbox({
     user: 'MailboxUsername',
     pass: 'MailboxPassword'
   },
-  timeout: 50 // optional, defaults to 50 ms.
+  timeout: 200 // optional, defaults to 200 ms.
 })
 
 mailbox.listen(8465, function(err) {
